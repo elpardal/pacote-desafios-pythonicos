@@ -11,11 +11,7 @@ e donuts(23) retorna 'Number of donuts: many'
 
 
 def donuts(count):
-    if count >= 10:
-        s = 'Number of donuts: many'
-    else:
-        s = 'Number of donuts: %s' % count
-    return s
+    return 'Number of donuts: many' if count >= 10 else 'Number of donuts: %s' % count
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
