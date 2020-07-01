@@ -13,10 +13,11 @@ a-frente + b-frente + a-trás + b-trás
 
 
 def front_back(a, b):
-    return ''.join([a[:len(a) // 2 + len(a) % 2],
-                    b[:len(b) // 2 + len(b) % 2],
-                    a[len(a) // 2 + len(a) % 2:],
-                    b[len(b) // 2 + len(b) % 2:]])
+    front = lambda x: x[:len(x) // 2 + len(x) % 2]
+    back = lambda x: x[len(x) // 2 + len(x) % 2:]
+
+    return ''.join([front(a), front(b), back(a), back(b)])
+
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
