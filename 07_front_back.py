@@ -12,10 +12,12 @@ a-frente + b-frente + a-trás + b-trás
 """
 
 
-def front_back(a, b):
-    front = lambda x: x[:len(x) // 2 + len(x) % 2]
-    back = lambda x: x[len(x) // 2 + len(x) % 2:]
+halv = lambda s: len(s) // 2 + len(s) % 2
+front = lambda s: s[:halv(s)]
+back = lambda s: s[halv(s):]
 
+
+def front_back(a, b):
     return ''.join([front(a), front(b), back(a), back(b)])
 
 
