@@ -12,13 +12,16 @@ a-frente + b-frente + a-trás + b-trás
 """
 
 
-halv = lambda s: len(s) // 2 + len(s) % 2
-front = lambda s: s[:halv(s)]
-back = lambda s: s[halv(s):]
+def half_word(word):
+    half = len(word) // 2 + len(word) % 2
+    return {'front': word[:half], 'back': word[half:]}
 
 
 def front_back(a, b):
-    return ''.join([front(a), front(b), back(a), back(b)])
+    a = half_word(a)
+    b = half_word(b)
+    return '%s%s%s%s' % (a['front'], b['front'], a['back'], b['back'])
+    # return ''.join([a['front'], b['front'], a['back'], b['back']])
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
